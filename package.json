@@ -14,7 +14,7 @@
     "jshint-stylish": "~0.1.3"
   },
   "scripts": {
-    "start": "node ./src | ./node_modules/.bin/bunyan",
+    "start": "node ./lib | ./node_modules/.bin/bunyan",
     "test": "npm run lint && npm run mocha",
     "mocha": "LOGLEVEL=fatal ./node_modules/.bin/mocha --reporter spec test/",
     "lint": "./node_modules/.bin/jshint --reporter ./node_modules/jshint-stylish/stylish.js ."
