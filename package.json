@@ -2,7 +2,7 @@
   "name": "node-boilerplate",
   "version": "0.0.1",
   "description": "Boilplate node application.",
-  "main": "./src",
+  "main": "./lib",
   "dependencies": {
     "bunyan": "~0.22.0",
     "config": "~0.4.32"
@@ -16,7 +16,7 @@
   "scripts": {
     "start": "node ./src | ./node_modules/.bin/bunyan",
     "test": "npm run lint && npm run mocha",
-    "mocha": "NODE_ENV=test ./node_modules/.bin/mocha --reporter spec test/",
+    "mocha": "LOGLEVEL=fatal ./node_modules/.bin/mocha --reporter spec test/",
     "lint": "./node_modules/.bin/jshint --reporter ./node_modules/jshint-stylish/stylish.js ."
   },
   "repository": {

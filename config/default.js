@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = {
-  environment: process.env.NODE_ENV
+  loglevel: process.env.LOGLEVEL || 'info'
 };
