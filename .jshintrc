@@ -24,6 +24,5 @@
   "funcscope" : true,
   "validthis" : true,
 
-  "white"     : true,
-  "nomen"     : true
+  "white"     : true
 }
