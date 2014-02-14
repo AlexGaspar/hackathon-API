@@ -1,5 +1,15 @@
 'use strict';
 
-module.exports = {
-  loglevel: process.env.LOGLEVEL || 'info'
-};
+module.exports = function() {
+
+  var appEnv = process.env.NODE_ENV || 'development'
+    , config = {}
+    ;
+
+
+  config.loglevel   = process.env.LOGLEVEL || 'info';
+
+  config.mongo      = require('./mongo')[appEnv]
+
+  return config;
+}();
