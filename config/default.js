@@ -8,8 +8,8 @@ module.exports = function() {
 
 
   config.loglevel   = process.env.LOGLEVEL || 'info';
-
-  config.mongo      = require('./mongo')[appEnv]
+  config.server     = require('./server')[appEnv];
+  config.mongo      = require('./mongo')[appEnv];
 
   return config;
 }();
