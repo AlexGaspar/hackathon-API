@@ -21,13 +21,13 @@ module.exports = function(server, APIVERSION) {
     return deferred.promise;
   }
 
-/**
- * [getByQuery description]
- * @param  {[type]}   query [description]
- * @param  {[type]}   res   [description]
- * @param  {Function} next  [description]
- * @return {[type]}         [description]
- */
+  /**
+   * [getByQuery description]
+   * @param  {[type]}   query [description]
+   * @param  {[type]}   res   [description]
+   * @param  {Function} next  [description]
+   * @return {[type]}         [description]
+   */
   var getByQuery = function(query, res, next) {
    find(query).then(function(docs){
       var response = {
@@ -56,33 +56,21 @@ module.exports = function(server, APIVERSION) {
   };
 
   /**
-   * [getByName description]
+   * [get description]
    * @param  {[type]}   req  [description]
    * @param  {[type]}   res  [description]
    * @param  {Function} next [description]
    * @return {[type]}        [description]
    */
-  var getByName = function(req, res, next) {
-    var query = {
-      name: req.params.name
-    };
+  var get = function(req, res ,next) {
+    var query = {}
+    query[req.params.field] = req.params.value
 
     getByQuery(query, res, next);
-  };
-
-  var getAByBarCode = function(req, res, next) {
-    var query = {
-      barcode: req.params.barcode
-    };
-
-    getByQuery(query, res, next);
-  };
-
-
+  }
 
   server.get(APIVERSION + '/products', getAll);
-  server.get(APIVERSION + '/products/name/:name', getByName);
-  server.get(APIVERSION + '/products/upc/:barcode', getAByBarCode);
+  server.get(APIVERSION + '/products/:field/:value', get);
 
   return server;
 };
