@@ -1,7 +1,16 @@
 'use strict';
 
-module.exports = function(mongo) {
+module.exports = function(mongoose) {
 
+  mongoose.model('products',
+    {
+        name: String
+      , description: String
+      , barcode: Number
+      , pictures: []
+      , materials: []
+    }
+  );
 
-  return mongo;
+  return mongoose;
 };

@@ -1,8 +1,9 @@
 'use strict';
 
-module.exports = function(mongo) {
+module.exports = function(mongoose) {
+  var models = models || {};
 
-  var mongo.products = require('./products')(mongo);
+  models.products = require('./products')(mongoose);
 
-  return mongo;
+  return models;
 };
