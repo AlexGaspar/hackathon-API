@@ -22,13 +22,11 @@ module.exports = function(server, APIVERSION) {
   var getAll = function(req, res, next) {
     var query = {};
 
-    find(query).then(function(){
+    find(query).then(function(docs){
       res.send(docs);
-
-      return next();
-    }).fail(function() {
+    }).fail(function(err) {
       res.send(500);
-
+    }).fin(function () {
       return next();
     });
   };

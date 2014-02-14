@@ -9,6 +9,7 @@ module.exports = function(mongoose) {
       , barcode: Number
       , pictures: []
       , materials: []
+      , last: Number
     }
   );
 };
