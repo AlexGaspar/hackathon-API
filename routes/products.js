@@ -82,7 +82,7 @@ module.exports = function(server, APIVERSION) {
 
   server.get(APIVERSION + '/products', getAll);
   server.get(APIVERSION + '/products/name/:name', getByName);
-  server.get(APIVERSION + '/products/barcode/:barcode', getAByBarCode);
+  server.get(APIVERSION + '/products/upc/:barcode', getAByBarCode);
 
   return server;
 };
