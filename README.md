@@ -9,6 +9,8 @@ Base URL :
 Routes :
 ----------------
 
+```
 GET  /products/:foo/:bar
 GET  /products
 POST /produtcs
+```
