@@ -2,7 +2,7 @@
 
 module.exports = function(mongoose) {
 
-  mongoose.model('products',
+  return mongoose.model('products',
     {
         name: String
       , description: String
@@ -11,6 +11,4 @@ module.exports = function(mongoose) {
       , materials: []
     }
   );
-
-  return mongoose;
 };

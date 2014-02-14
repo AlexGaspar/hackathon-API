@@ -1,9 +1,11 @@
 'use strict';
 
-module.exports = function(mongoose) {
-  var models = models || {};
+module.exports = function(mongoose, server) {
+  if(!server) throw new Error('Server not yet initialized...');
 
-  models.products = require('./products')(mongoose);
+  server.models = server.models || {};
 
-  return models;
+  server.models.products = require('./products')(mongoose);
+
+  return server;
 };
