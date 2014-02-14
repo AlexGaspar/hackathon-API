@@ -6,10 +6,17 @@ module.exports = function(mongoose) {
     {
         name: String
       , description: String
-      , barcode: Number
-      , pictures: []
-      , materials: []
-      , last: Number
+      , upc: Number
+      , image: String
+      , materials: [
+        {
+            name: String
+          , percentage: Number
+        }
+      ]
+      , expiration: Number
+      , recycle_info: String
+      , origin_info: String
     }
   );
 };
