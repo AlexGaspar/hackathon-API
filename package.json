@@ -8,7 +8,8 @@
     "config": "~0.4.32",
     "restify": "~2.6.1",
     "mongoose": "~3.8.7",
-    "q": "~1.0.0"
+    "q": "~1.0.0",
+    "express": "~3.4.8"
   },
   "devDependencies": {
     "mocha": "~1.14.0",

@@ -37,8 +37,6 @@ module.exports = function(server, APIVERSION) {
       res.send(response);
     }).fail(function(err) {
       res.send(500);
-    }).fin(function () {
-      return next();
     });
   };
 
@@ -79,14 +77,12 @@ module.exports = function(server, APIVERSION) {
     Products.create(req.params, function (err, doc) {
       if (err) res.send(500);
       else res.send(200, doc);
-
-      return next();
     });
   };
 
-  server.get(APIVERSION + '/products', getAll);
-  server.get(APIVERSION + '/products/:field/:value', get);
-  server.post(APIVERSION + '/products', set);
+  server.get('/products', getAll);
+  server.get('/products/:field/:value', get);
+  server.post('/products', set);
 
   return server;
 };
