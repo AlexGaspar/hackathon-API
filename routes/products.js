@@ -19,7 +19,7 @@ module.exports = function(server, APIVERSION) {
     });
 
     return deferred.promise;
-  }
+  };
 
   /**
    * [getByQuery description]
@@ -67,10 +67,26 @@ module.exports = function(server, APIVERSION) {
     query[req.params.field] = req.params.value
 
     getByQuery(query, res, next);
-  }
+  };
+
+  /**
+   * [set description]
+   * @param {[type]}   req  [description]
+   * @param {[type]}   res  [description]
+   * @param {Function} next [description]
+   */
+  var set = function(req, res ,next) {
+    Products.create(req.params, function (err, doc) {
+      if (err) res.send(500);
+      else res.send(200, doc);
+
+      return next();
+    });
+  };
 
   server.get(APIVERSION + '/products', getAll);
   server.get(APIVERSION + '/products/:field/:value', get);
+  server.post(APIVERSION + '/products', set);
 
   return server;
 };
