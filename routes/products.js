@@ -80,9 +80,9 @@ module.exports = function(server, APIVERSION) {
     });
   };
 
-  server.get('/products', getAll);
-  server.get('/products/:field/:value', get);
-  server.post('/products', set);
+  server.get(APIVERSION + '/products', getAll);
+  server.get(APIVERSION + '/products/:field/:value', get);
+  server.post(APIVERSION + '/products', set);
 
   return server;
 };
