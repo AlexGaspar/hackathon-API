@@ -17,6 +17,7 @@ module.exports = function(mongoose) {
       , expiration: Number
       , recycle_info: String
       , origin_info: String
+      , footprint_info: String
       , alternatives: Array
     }
   );
